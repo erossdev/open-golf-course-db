@@ -11,10 +11,6 @@
   "license": "ISC",
   "dependencies": {
     "better-sqlite3": "^9.4.0",
-    "drizzle-orm": "^0.29.3",
-    "json-2-csv": "^5.0.1"
-  },
-  "devDependencies": {
-    "drizzle-kit": "^0.20.14"
+    "papaparse": "^5.4.1"
   }
 }
