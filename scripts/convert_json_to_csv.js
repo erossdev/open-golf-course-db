@@ -1,7 +1,7 @@
 const converter = require('json-2-csv'),
     fs = require('fs');
 
-const c = require('./courses.json');
+const c = require('./outputs/courses.json');
 
 async function doit() {
     const csv = await converter.json2csv(c, {
@@ -18,7 +18,7 @@ async function doit() {
             }
         }
     });
-    fs.writeFileSync('courses.csv', csv);
+    fs.writeFileSync('./outputs/courses.csv', csv);
 }
 
 doit();

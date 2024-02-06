@@ -2,7 +2,7 @@ const sqlite = require('better-sqlite3');
 
 const db = new sqlite('./outputs/courses.db');
 
-const courses = require('./outputs/courses.json');
+const courses = require('../outputs/courses.json');
 
 const tableStmt = db.prepare('CREATE TABLE IF NOT EXISTS courses (_id text PRIMARY KEY, name text, city text, state text, latLng text)');
 
