@@ -1,9 +1,6 @@
-name: Generate Artifacts
+name: Test Artifact Creation and (if tagged) Release
 
-on:
-  push:
-    tags:
-      - "v*"
+on: push
 
 jobs:
   generate:
@@ -14,19 +11,16 @@ jobs:
         with:
           node-version: 18
 
-      - run: mkdir outputs
-
       - run: npm ci
 
       - run: npm run csvtojson
 
-      - run: ls -lrta
-
-      - run: ls -lrta outputs
-
       - run: npm run jsontosqlite
 
-      - uses: actions/upload-artifact@v4
+      - name: Release
+        uses: softprops/action-gh-release@v1
+        if: startsWith(github.ref, 'refs/tags/')
         with:
-          name: outputs
-          path: outputs
+          files: |
+            courses.json
+            courses.db
