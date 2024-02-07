@@ -1,7 +1,7 @@
 const Papa = require('papaparse'),
     fs = require('fs');
 
-const c = fs.readFileSync('./outputs/courses.csv', { encoding: 'utf-8' });
+const c = fs.readFileSync('./courses.csv', { encoding: 'utf-8' });
 
 async function doit() {
     const { data, errors } = Papa.parse(c, {

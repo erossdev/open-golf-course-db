@@ -11,7 +11,6 @@ In the `/outputs` folder you will find:
 | ------------- | ------------- |
 | courses.db  | SQLite DB  |
 | courses.json | JSON Array  |
-| courses.csv | CSV file |
 
 # Course Fields
 
@@ -22,12 +21,20 @@ In the `/outputs` folder you will find:
 | city | string  | course city |
 | state | string  | course state |
 | country | string | course country |
-| latLng | string or array  | Course coordinates. For SQLite format is a string `latitude, longitude`. For JSON it is an array `[latitude, longitude]` |
+| latLng | string or array  | Course coordinates. For SQLite format it is represented as a string `latitude, longitude`. For JSON it is an array `[latitude, longitude]` |
 
 # How do I use it?
 
-Feel free to download any of the outputs to use. We also provide an API at a fair price to help sustain this project. Check it out at [TBD](TBD)
+Download any artifact from the Releases. Only artifacts in releases should be downloaded.
+
+# Is there an API?
+
+Coming soon. An API will be a fair price and will help sustain development and upkeep of this free database!
 
 # How do I contribute?
 
-Coming Soon!
+`courses.csv` acts as the "gold copy" of data.
+
+1. Open an issue
+2. Make your changes
+3. Submit a Pull Request and it will be reviewed, merged and tagged.
