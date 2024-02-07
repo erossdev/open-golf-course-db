@@ -20,14 +20,14 @@ Right now, there are over 13,000 courses only in the USA. The long-term plan is 
 
 # Course Fields
 
-| Field Name | Type                | Description                                                                                                                  |
-| ---------- | ------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
-| \_id       | `string`            | randomly generated unique identifier                                                                                         |
-| name       | `string`            | course name                                                                                                                  |
-| city       | `string`            | course city                                                                                                                  |
-| state      | `string`            | course state                                                                                                                 |
-| country    | `string`            | course country                                                                                                               |
-| latLng     | `string` or `array` | Course coordinates. For SQLite format is a string `latitude, longitude`. For JSON format is an array `[latitude, longitude]` |
+| Field Name | Type     | Description                                          |
+| ---------- | -------- | ---------------------------------------------------- |
+| \_id       | `string` | randomly generated unique identifier                 |
+| name       | `string` | course name                                          |
+| city       | `string` | course city                                          |
+| state      | `string` | course state                                         |
+| country    | `string` | course country                                       |
+| latLng     | `array`  | course coordinates. `undefined` if we don't have any |
 
 # How do I use it?
 
