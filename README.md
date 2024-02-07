@@ -14,6 +14,10 @@ In the `/outputs` folder you will find:
 | courses.db   | SQLite DB  |
 | courses.json | JSON Array |
 
+# Included Courses
+
+Right now, there are over 13,000 courses only in the USA. The long-term plan is to include courses from every country with accurate data.
+
 # Course Fields
 
 | Field Name | Type                | Description                                                                                                                  |
