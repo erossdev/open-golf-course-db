@@ -13,7 +13,7 @@ async function doit() {
                     return 'undefined';
                 } else {
                     const coords = val.split(',');
-                    const jsonifiedCoords = [parseFloat(coords[1]), parseFloat(coords[0])];// [lat, long]
+                    const jsonifiedCoords = [parseFloat(coords[0]), parseFloat(coords[1])];// [lat, long]
                     return jsonifiedCoords;
                 }
             } else if (field === 'name' || field === 'city' | field === 'state') {
