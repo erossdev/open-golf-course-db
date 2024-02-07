@@ -17,7 +17,7 @@ async function doit() {
                     return jsonifiedCoords;
                 }
             } else if (field === 'name' || field === 'city' | field === 'state') {
-                return titleCase(val);
+                return titleCase(val).trim();
             } else {
                 return val;
             }
