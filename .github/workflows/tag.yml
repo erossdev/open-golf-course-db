@@ -20,6 +20,10 @@ jobs:
 
       - run: npm run csvtojson
 
+      - run: ls -lrta
+
+      - run: ls -lrta outputs
+
       - run: npm run jsontosqlite
 
       - uses: actions/upload-artifact@v4

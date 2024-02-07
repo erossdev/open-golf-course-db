@@ -25,6 +25,9 @@ async function doit() {
         console.log(`parsed ${ data.length } courses`);
         fs.writeFileSync('./outputs/courses.json', JSON.stringify(data));
         console.log('Saved to outputs folder.');
+    } else {
+        errors.forEach((e) => console.error(e));
+        throw new Error('Failed to parse CSV.');
     }
 }
 
