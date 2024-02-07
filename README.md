@@ -18,7 +18,7 @@ In the `/outputs` folder you will find:
 
 | Field Name | Type                | Description                                                                                                                                |
 | ---------- | ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
-| \_id       | text                | randomly generated unique identifier                                                                                                       |
+| \_id       | `string`            | randomly generated unique identifier                                                                                                       |
 | name       | `string`            | course name                                                                                                                                |
 | city       | `string`            | course city                                                                                                                                |
 | state      | `string`            | course state                                                                                                                               |
