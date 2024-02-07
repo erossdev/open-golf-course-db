@@ -4,23 +4,35 @@ on:
   push:
     tags:
       - "v*"
-    
+
 jobs:
   generate:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - name: Login to Docker
+        run: echo -n ${{ secrets.GITHUB_TOKEN }} | docker login -u ${{ github.actor }} --password-stdin docker.pkg.github.com
+
+      - name: Checkout
+        uses: actions/checkout@v4
+
       - uses: shihanng/csvs-to-sqlite-act@v1.0.0
         with:
           cli_args: courses.csv ./outputs/courses.db
           working_directory: ./
+
+      - name: Logout of Docker
+        run: docker logout docker.pkg.github.com
+        if: ${{ always() }}
+
       - uses: actions/setup-node@v4
         with:
           node-version: 18
+
       - run: npm ci
+
       - run: npm run csvtojson
+
       - uses: actions/upload-artifact@v4
         with:
           name: outputs
           path: outputs
-
