@@ -9,21 +9,6 @@ jobs:
   generate:
     runs-on: ubuntu-latest
     steps:
-      - name: Login to Docker
-        run: echo -n ${{ secrets.GITHUB_TOKEN }} | docker login -u ${{ github.actor }} --password-stdin ghcr.io
-
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - uses: shihanng/csvs-to-sqlite-act@v1.0.0
-        with:
-          cli_args: courses.csv ./outputs/courses.db
-          working_directory: ./
-
-      - name: Logout of Docker
-        run: docker logout docker.pkg.github.com
-        if: ${{ always() }}
-
       - uses: actions/setup-node@v4
         with:
           node-version: 18
@@ -31,6 +16,8 @@ jobs:
       - run: npm ci
 
       - run: npm run csvtojson
+
+      - run: npm run jsontosqlite
 
       - uses: actions/upload-artifact@v4
         with:
