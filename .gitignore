@@ -1,2 +1,4 @@
 node_modules/
 .DS_Store
+courses.json
+courses.db

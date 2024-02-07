@@ -1,5 +1,6 @@
-const Papa = require('papaparse'),
-    fs = require('fs');
+import fs from 'node:fs';
+import Papa from 'papaparse';
+import { titleCase } from 'title-case';
 
 const c = fs.readFileSync('./courses.csv', { encoding: 'utf-8' });
 
@@ -15,6 +16,8 @@ async function doit() {
                     const jsonifiedCoords = [parseFloat(coords[1]), parseFloat(coords[0])];// [lat, long]
                     return jsonifiedCoords;
                 }
+            } else if (field === 'name' || field === 'city' | field === 'state') {
+                return titleCase(val);
             } else {
                 return val;
             }

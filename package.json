@@ -2,7 +2,8 @@
   "name": "open-golf-course-db",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "type": "module",
+  "exports": "./index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "csvtojson": "node ./convert_csv_to_json.js",
@@ -12,8 +13,12 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "engines": {
+    "node": ">=18.0.0"
+  },
   "dependencies": {
     "better-sqlite3": "^9.4.0",
-    "papaparse": "^5.4.1"
+    "papaparse": "^5.4.1",
+    "title-case": "^4.3.1"
   }
 }

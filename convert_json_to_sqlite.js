@@ -1,8 +1,8 @@
-const sqlite = require('better-sqlite3');
+import sqlite from 'better-sqlite3';
+
+import courses from './courses.json' assert { type: 'json' };
 
 const db = new sqlite('./courses.db');
-
-const courses = require('./courses.json');
 
 const tableStmt = db.prepare('CREATE TABLE IF NOT EXISTS courses (_id text PRIMARY KEY, name text, city text, state text, latLng text)');
 
