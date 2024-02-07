@@ -27,7 +27,6 @@ async function doit() {
         console.log('Saved to outputs folder.');
     } else {
         errors.forEach((e) => console.error(e));
-        throw new Error('Failed to parse CSV.');
     }
 }
 
