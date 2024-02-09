@@ -18,6 +18,8 @@ async function doit() {
                 }
             } else if (field === 'name' || field === 'city' | field === 'state') {
                 return titleCase(val).trim();
+            } else if(field === 'updatedAt') {
+                return new Date(val);
             } else {
                 return val;
             }
