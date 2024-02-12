@@ -2,9 +2,6 @@
 
 Open Source database for golf courses. The goal of this project is to keep an up-to-date database of all golf courses.
 
-> [!WARNING]  
-> This project is usable but not yet at v1. There may be duplicate courses, course names slightly wrong, or incorrect/missing `latLng` values
-
 # Provided Outputs
 
 In the `/outputs` folder you will find:
@@ -16,7 +13,7 @@ In the `/outputs` folder you will find:
 
 # Included Courses
 
-Right now, there are over 13,000 courses only in the USA. The long-term plan is to include courses from every country with accurate data.
+Right now, there are over 10,000 courses only in the US. The long-term plan is to include courses from every country with accurate data.
 
 # Course Fields
 
@@ -28,6 +25,7 @@ Right now, there are over 13,000 courses only in the USA. The long-term plan is 
 | state      | `string` | course state                                         |
 | country    | `string` | course country                                       |
 | latLng     | `array`  | course coordinates. `undefined` if we don't have any |
+| updatedAt  | 'string' | date string format                                   |
 
 # How do I use it?
 
