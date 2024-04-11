@@ -2,9 +2,9 @@ import fs from 'node:fs';
 import Papa from 'papaparse';
 import { titleCase } from 'title-case';
 
-const c = fs.readFileSync('./courses.csv', { encoding: 'utf-8' });
 
-async function doit() {
+export async function convertCsvToJson() {
+    const c = fs.readFileSync('./courses.csv', { encoding: 'utf-8' });
     const { data, errors } = Papa.parse(c, {
         header: true,
         transform(val, field) {
@@ -28,11 +28,9 @@ async function doit() {
 
     if (!errors.length) {
         console.log(`parsed ${ data.length } courses`);
-        fs.writeFileSync('./courses.json', JSON.stringify(data));
+        fs.writeFileSync('./outputs/courses.json', JSON.stringify(data));
         console.log('Saved to outputs folder.');
     } else {
         errors.forEach((e) => console.error(e));
     }
 }
-
-doit();

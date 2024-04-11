@@ -1,7 +1,11 @@
+/**
+ * This script is for testing and debugging purposes
+ */
+
 import fs from 'node:fs';
 import Papa from 'papaparse';
 
-import c from './courses.json' assert { type: 'json' };
+import c from '../courses.json' assert { type: 'json' };
 
 async function doit() {
     const data = Papa.unparse(c);

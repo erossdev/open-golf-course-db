@@ -1,24 +1,28 @@
 {
-  "name": "open-golf-course-db",
-  "version": "1.0.0",
-  "description": "",
-  "type": "module",
-  "exports": "./index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "csvtojson": "node ./convert_csv_to_json.js",
-    "jsontocsv": "node ./scripts/convert_json_to_csv.js",
-    "jsontosqlite": "node ./convert_json_to_sqlite.js"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "engines": {
-    "node": ">=18.0.0"
-  },
-  "dependencies": {
-    "better-sqlite3": "^9.4.0",
-    "papaparse": "^5.4.1",
-    "title-case": "^4.3.1"
-  }
+    "name": "open-golf-course-db",
+    "version": "1.0.0",
+    "description": "",
+    "type": "module",
+    "scripts": {
+        "generate": "node ./scripts/generate-output.js"
+    },
+    "keywords": [
+        "golf course database",
+        "golf",
+        "golf db"
+    ],
+    "homepage": "https://open-golf-course-db.com",
+    "author": {
+        "name": "Elliott Ross",
+        "url": "https://eross.dev"
+    },
+    "license": "ISC",
+    "engines": {
+        "node": ">=20.0.0"
+    },
+    "dependencies": {
+        "better-sqlite3": "^9.4.0",
+        "papaparse": "^5.4.1",
+        "title-case": "^4.3.1"
+    }
 }
