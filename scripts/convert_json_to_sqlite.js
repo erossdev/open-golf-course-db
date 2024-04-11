@@ -2,10 +2,10 @@ import sqlite from 'better-sqlite3';
 import fs from 'node:fs';
 
 export async function convertJsonToSqlite() {
-    const c = fs.readFileSync('./outputs/courses.json');
+    const c = fs.readFileSync('courses.json');
     const courses = JSON.parse(c);
 
-    const db = new sqlite('./outputs/courses.db');
+    const db = new sqlite('courses.db');
     
     const tableStmt = db.prepare('CREATE TABLE IF NOT EXISTS courses (_id text PRIMARY KEY, name text, city text, state text, latLng text)');
     
